@@ -7,7 +7,6 @@ class States(Enum):
     TURN = 3
     RIVER = 4
 
-
 class Card:
     def __init__(self, value, suit):
         self.value = value
@@ -45,22 +44,53 @@ class Environment:
         self.board = []
         self.blinds = [2, 4]
 
-    def action_handler(self, a1, a2):
+    def action_handler(self, action):
         match self.state:
             case States.PREFLOP:
-
+                self.preflop_handler()
                 self.state += 1
             case States.FLOP:
-
+                self.flop_handler()
                 self.state += 1
 
             case States.TURN:
-
+                self.turn_handler()
                 self.state += 1
             case States.RIVER:
-
+                self.river_handler()
                 self.state += 1
+
+    def preflop_handler(self):
+        pass
+
+    def flop_handler(self):
+        pass
+
+    def turn_handler(self):
+        pass
+
+    def river_handler(self):
+        pass
+class Model:
+    def __init__(self):
+        pass
+
+class Turn_Tracker:
+    def __init__(self, players, start_id):
+
+
+
+
+
+        pass
 
 
 if __name__ == "__main__":
+    player1 = Player(0)
+    player2 = Player(1)
+    table = Environment()
+    done = True
+    while done:
+        pass
+
     print(sys.executable)
